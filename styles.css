@@ -1,0 +1,63 @@
+/* ZenoPress — publish confirmation modal */
+
+.zp-modal-header {
+  margin: 0 0 12px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.zp-header-row {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.zp-header-row + .zp-header-row {
+  margin-top: 4px;
+}
+
+.zp-header-label {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.zp-header-value {
+  color: var(--text-normal);
+  font-size: var(--font-ui-medium);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.zp-field-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 12px;
+  align-items: baseline;
+  margin: 0;
+}
+
+.zp-field-label {
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.zp-field-value,
+.zp-mono {
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-smaller);
+  color: var(--text-normal);
+  overflow-wrap: anywhere;
+}
+
+.zp-warning {
+  margin-top: 12px;
+  padding: 8px 10px;
+  border-radius: var(--radius-s);
+  background-color: var(--background-modifier-error-hover, rgba(var(--color-red-rgb), 0.1));
+  color: var(--text-error);
+  font-weight: 600;
+}

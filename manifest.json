@@ -1,0 +1,9 @@
+{
+  "id": "zenopress",
+  "name": "ZenoPress",
+  "version": "0.2.0",
+  "minAppVersion": "1.4.0",
+  "description": "Publish the active note to a Zensical/MkDocs Material GitHub Pages repo. Copies the MD file as-is, copies referenced images, and rewrites Obsidian wikilinks/embeds to standard Markdown.",
+  "author": "Jeremy Champion",
+  "isDesktopOnly": true
+}
