@@ -212,6 +212,7 @@ class PublishConfirmModal extends Modal {
   onOpen(): void {
     const { contentEl, titleEl } = this;
     const s = this.summary;
+    this.modalEl.addClass("zp-modal");
     titleEl.setText("ZenoPress — publish?");
 
     // Header: article title (from H1) + the slugified destination filename.

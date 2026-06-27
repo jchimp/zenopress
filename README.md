@@ -51,7 +51,26 @@ Publish the active Obsidian note to a local clone of your Zensical / MkDocs Mate
 - Does not derive the filename from the title. The published filename is a websafe
   **slug of the source note's filename** (not its `# Heading` title).
 
-## Install / dev setup
+## Install (manual)
+
+ZenoPress is not in the Obsidian Community Plugins directory; install it by hand
+from a GitHub release.
+
+1. Go to the [**Releases**](../../releases/latest) page and download these three
+   files from the latest release:
+   - `main.js`
+   - `manifest.json`
+   - `styles.css`
+2. Create the folder `<your-vault>/.obsidian/plugins/zenopress/` and drop the three
+   files into it.
+3. In Obsidian: **Settings → Community plugins**, make sure *Restricted mode* is
+   **off**, then enable **ZenoPress**.
+4. Open the plugin's settings tab and set **Repo root** (absolute path to your
+   GitHub Pages repo clone); adjust the Articles/Images subpaths if needed.
+
+To update later, replace those three files with the ones from a newer release.
+
+## Build from source / dev setup
 
 1. **Clone or unzip this folder** somewhere convenient (NOT inside the vault).
 2. `npm install`
@@ -108,6 +127,20 @@ zenopress/
 - No callout/admonition translation.
 - No automatic cleanup of orphaned previously-published files: renaming a source note (or a name that changes its slug) publishes to a new filename/folder and leaves the old output behind.
 - Two notes whose names slug to the same value publish to the same filename; the confirm dialog's overwrite warning is the only guard.
+
+## Releasing (maintainer)
+
+Releases are automated by [`.github/workflows/release.yml`](.github/workflows/release.yml),
+which builds and attaches `main.js`, `manifest.json`, and `styles.css` whenever a
+version tag is pushed.
+
+```sh
+npm version patch   # or minor / major — bumps manifest.json + versions.json, commits, tags (no "v" prefix)
+git push --follow-tags
+```
+
+One-time repo setup: **Settings → Actions → General → Workflow permissions →
+Read and write permissions** (lets the workflow create the release).
 
 ## License
 
